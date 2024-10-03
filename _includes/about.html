@@ -12,40 +12,32 @@
         </p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <button id="showImageButton" class="btn btn-lg btn-outline">Show Resume</button>
-        <img id="displayedImage" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
-        <img id="displayedImage2" src="img/portfolio/ENG_Resume_McCormick_Matthew.png.PNG" alt="Description of the image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">     
+        <button id="showImageButton" class="btn btn-lg btn-outline">Show Resumes</button>
+        <div id="imageContainer" style="display: none; margin-top: 10px; text-align: center;">
+          <img id="displayedImage" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Resume 1" style="max-width: 45%; height: auto; margin: 0 2.5%;">
+          <img id="displayedImage2" src="img/portfolio/ENG_Resume_McCormick_Matthew.png.PNG" alt="Resume 2" style="max-width: 45%; height: auto; margin: 0 2.5%;">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Get references to the button and image
+  // Get references to the button and image container
   const button = document.getElementById('showImageButton');
-  const displayedImage = document.getElementById('displayedImage');
-  const displayedImage2 = document.getElementById('displayedImage2');
+  const imageContainer = document.getElementById('imageContainer');
 
   // Add click event listener to the button
   button.addEventListener('click', () => {
-    // Toggle the display property of the image
-    if (displayedImage.style.display === 'none' || displayedImage.style.display === '') {
-      displayedImage.style.display = 'block';
-      button.textContent = 'Hide Image'; // Change button text when showing image
+    // Toggle the display property of the image container
+    const isHidden = imageContainer.style.display === 'none' || imageContainer.style.display === '';
+    
+    if (isHidden) {
+      imageContainer.style.display = 'block';
+      button.textContent = 'Hide Resumes'; // Change button text when showing images
     } else {
-      displayedImage.style.display = 'none';
-      button.textContent = 'Show Image'; // Change button text back when hiding image
-    }
-  });
-  // Add click event listener to the button
-  button.addEventListener('click', () => {
-    // Toggle the display property of the image
-    if (displayedImage2.style.display === 'none' || displayedImage2.style.display === '') {
-      displayedImage2.style.display = 'block';
-      button.textContent = 'Hide Image'; // Change button text when showing image
-    } else {
-      displayedImage2.style.display = 'none';
-      button.textContent = 'Show Image'; // Change button text back when hiding image
+      imageContainer.style.display = 'none';
+      button.textContent = 'Show Resumes'; // Change button text back when hiding images
     }
   });
 </script>
