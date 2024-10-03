@@ -12,32 +12,18 @@
         </p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <button id="showImagesButton" class="btn btn-lg btn-outline">Show Images</button>
-        <div id="imageContainer" style="display: none; margin-top: 10px; text-align: center;">
-          <img id="image1" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the first image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
-        <img id="image2" src="img/portfolio/ENG_resume_McCormick_Matthew.png.PNG" alt="Description of the second image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
-        </div>
+        <button id="showImageButton" class="btn btn-lg btn-outline">Resume</button>
+        <img id="displayedImage" src="img/portfolio/ENG_Resume_McCormick_Mattew.PNG" alt="Description of the image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Get references to the button and image container
-  const button = document.getElementById('showImagesButton');
-  const imageContainer = document.getElementById('imageContainer');
+  const button = document.getElementById('showImageButton');
+  const displayedImage = document.getElementById('displayedImage');
 
-  // Add click event listener to the button
   button.addEventListener('click', () => {
-    // Toggle the display property of the image container
-    const isHidden = imageContainer.style.display === 'none' || imageContainer.style.display === '';
-    
-    if (isHidden) {
-      imageContainer.style.display = 'block';
-      button.textContent = 'Hide Images'; // Change button text when showing images
-    } else {
-      imageContainer.style.display = 'none';
-      button.textContent = 'Show Images'; // Change button text back when hiding images
-    }
+    displayedImage.style.display = displayedImage.style.display === 'none' ? 'block' : 'none'; // Toggle image display
   });
 </script>
