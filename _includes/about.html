@@ -12,18 +12,27 @@
         </p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <button id="showImageButton" class="btn btn-lg btn-outline">Resume</button>
-        <img id="displayedImage" src="img/portfolio/ENG_Resume_McCormick_Mattew.PNG" alt="Description of the image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
+        <button id="showImageButton" class="btn btn-lg btn-outline">Show Resume</button>
+        <img id="displayedImage" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
       </div>
     </div>
   </div>
 </section>
 
 <script>
+  // Get references to the button and image
   const button = document.getElementById('showImageButton');
   const displayedImage = document.getElementById('displayedImage');
 
+  // Add click event listener to the button
   button.addEventListener('click', () => {
-    displayedImage.style.display = displayedImage.style.display === 'none' ? 'block' : 'none'; // Toggle image display
+    // Toggle the display property of the image
+    if (displayedImage.style.display === 'none' || displayedImage.style.display === '') {
+      displayedImage.style.display = 'block';
+      button.textContent = 'Hide Image'; // Change button text when showing image
+    } else {
+      displayedImage.style.display = 'none';
+      button.textContent = 'Show Image'; // Change button text back when hiding image
+    }
   });
 </script>
