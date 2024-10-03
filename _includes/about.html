@@ -30,9 +30,7 @@
   // Add click event listener to the button
   button.addEventListener('click', () => {
     // Toggle the display property of the image container
-    const isHidden = imageContainer.style.display === 'none' || imageContainer.style.display === '';
-    
-    if (isHidden) {
+    if (imageContainer.style.display === 'none' || imageContainer.style.display === '') {
       imageContainer.style.display = 'block';
       button.textContent = 'Hide Resumes'; // Change button text when showing images
     } else {
