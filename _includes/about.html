@@ -12,33 +12,35 @@
         </p>
       </div>
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <button id="showImagesButton" class="btn btn-lg btn-outline">Resume and Cover Letter</button>
-        <img id="image1" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the first image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
+        <button id="showImagesButton" class="btn btn-lg btn-outline">Show Images</button>
+        <div id="imageContainer" style="display: none; margin-top: 10px; text-align: center;">
+          <img id="image1" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the first image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
         <img id="image2" src="img/portfolio/ENG_resume_McCormick_Matthew.png.PNG" alt="Description of the second image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Get references to the button and images
+  // Get references to the button and image container
   const button = document.getElementById('showImagesButton');
-  const image1 = document.getElementById('image1');
-  const image2 = document.getElementById('image2');
+  const imageContainer = document.getElementById('imageContainer');
 
   // Add click event listener to the button
   button.addEventListener('click', () => {
-    // Toggle the display property of both images
-    const isHidden = image1.style.display === 'none' || image1.style.display === '' || image2.style.display === 'none' || image2.style.display === '';
+    // Toggle the display property of the image container
+    const isHidden = imageContainer.style.display === 'none' || imageContainer.style.display === '';
     
     if (isHidden) {
-      image1.style.display = 'block';
-      image2.style.display = 'block';
+      imageContainer.style.display = 'block';
       button.textContent = 'Hide Images'; // Change button text when showing images
     } else {
-      image1.style.display = 'none';
-      image2.style.display = 'none';
+      imageContainer.style.display = 'none';
       button.textContent = 'Show Images'; // Change button text back when hiding images
     }
   });
 </script>
+
+ <img id="image1" src="img/portfolio/ENG_Resume_McCormick_Matthew.PNG" alt="Description of the first image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
+        <img id="image2" src="img/portfolio/ENG_resume_McCormick_Matthew.png.PNG" alt="Description of the second image" style="display: none; margin-top: 10px; max-width: 100%; height: auto;">
