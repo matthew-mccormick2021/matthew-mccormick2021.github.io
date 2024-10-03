@@ -1,38 +1,51 @@
 <?php
+// Validate and sanitize email address
 $email_address = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
 // Check for empty fields
-if(empty($_POST['name'])  		||
-   empty($_POST['email']) 		||
-   empty($_POST['phone']) 		||
-   empty($_POST['message'])	||
-   !$email_address)
-   {
-	echo "No arguments Provided!";
-	return false;
-   }
+if (empty($_POST['name']) || 
+    empty($_POST['email']) || 
+    empty($_POST['phone']) || 
+    empty($_POST['message']) || 
+    !$email_address) {
+    echo "No arguments provided or invalid email!";
+    return false;
+}
 
-$name = $_POST['name'];
-if ($email_address === FALSE) {
+// Sanitize user inputs
+$name = htmlspecialchars(trim($_POST['name']));
+$phone = htmlspecialchars(trim($_POST['phone']));
+$message = htmlspecialchars(trim($_POST['message']));
+
+// Check if the email address is valid
+if ($email_address === false) {
     echo 'Invalid email';
     exit(1);
 }
-$phone = $_POST['phone'];
-$message = $_POST['message'];
 
-if (empty($_POST['_gotcha'])) { // If hidden field was filled out (by spambots) don't send!
+// Check for hidden field to prevent spam
+if (empty($_POST['_gotcha'])) { 
     // Create the email and send the message
-    $to = 'matthew.mccormick2021@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-    $email_subject = "Website Contact Form:  $name";
-    $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-    $headers = "From: noreply@google.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+    $to = 'matthew.mccormick2021@gmail.com'; // Your email address
+    $email_subject = "Website Contact Form: $name";
+    $email_body = "You have received a new message from your website contact form.\n\n" .
+                  "Here are the details:\n\n" .
+                  "Name: $name\n\n" .
+                  "Email: $email_address\n\n" .
+                  "Phone: $phone\n\n" .
+                  "Message:\n$message";
+    $headers = "From: noreply@yourdomain.com\n"; // Use a valid sender email
     $headers .= "Reply-To: $email_address";
-    mail($to,$email_subject,$email_body,$headers);
+
+    // Attempt to send the email
+    if (mail($to, $email_subject, $email_body, $headers)) {
+        echo "Message sent successfully!";
+    } else {
+        echo "Message delivery failed.";
+    }
     return true;
 }
-echo "Gotcha, spambot!";
-return false;
-?>
+
 // If the hidden field was filled out, it's likely a bot
 echo "Gotcha, spambot!";
 return false;
