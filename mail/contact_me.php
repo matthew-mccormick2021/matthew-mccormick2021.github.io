@@ -38,8 +38,8 @@ if (empty($_POST['_gotcha'])) {
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'your_email@gmail.com';            // Your Gmail address
-        $mail->Password = 'your_email_password';             // Your Gmail password or App Password
+        $mail->Username = 'matthew.mccormick2021@gmail.com';            // Your Gmail address
+        $mail->Password = '2025Grad!';             // Your Gmail password or App Password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                   // TCP port to connect to
 
