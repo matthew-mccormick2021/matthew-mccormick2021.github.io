@@ -14,7 +14,7 @@ google_verify:
 bing_verify:
 
 # Contact form:
-contact: default  # Enable the default PHP contact form
+contact: static  # Enable the default PHP contact form
 
 # If you use disqus you need disqus shortname
 disqus_shortname: matthew-mccormick2021
