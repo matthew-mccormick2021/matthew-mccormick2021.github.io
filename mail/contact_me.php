@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Ensure that the request is made using the POST method
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email_address = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -40,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Message sent successfully!";
         return true;
     } else {
-        echo "Message could not be sent. Please try again.";
+        echo "Mail server is not responding. Please try again later.";
         return false;
     }
 } else {
