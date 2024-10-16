@@ -1,8 +1,8 @@
 ---
 layout: default
 modal-id: 1
-date: 2014-07-18
-img: Trebuchet.jpeg
+date: 2024-10-15
+img: Trebuchet.png
 alt: image-alt
 project-date: May 2021
 client: MAE 1351 Intro to Design
