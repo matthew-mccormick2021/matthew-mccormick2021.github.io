@@ -4,7 +4,7 @@ modal-id: 2
 date: 2014-11-09
 img: Airfoil.png
 alt: image-alt
-project-date: November 2024
+project-date: November 2023
 client: MAE 3303 Compressible Flow
 category: Airfoil Design (MatLab)
 description: Currently Working on!
