@@ -1,55 +1,35 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$email_address = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
-// Ensure that the request is made using the POST method
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email_address = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+// Check for empty fields
+if(empty($_POST['name'])  		||
+   empty($_POST['email']) 		||
+   empty($_POST['phone']) 		||
+   empty($_POST['message'])	||
+   !$email_address)
+   {
+	echo "No arguments Provided!";
+	return false;
+   }
 
-    // Check for empty fields
-    if (empty($_POST['name']) ||
-        empty($_POST['email']) ||
-        empty($_POST['phone']) ||
-        empty($_POST['message']) ||
-        !$email_address) {
-        echo "No arguments Provided!";
-        return false;
-    }
-
-    $name = strip_tags(trim($_POST['name']));
-    $phone = strip_tags(trim($_POST['phone']));
-    $message = strip_tags(trim($_POST['message']));
-
-    // Check if the email is valid
-    if ($email_address === FALSE) {
-        echo 'Invalid email';
-        exit(1);
-    }
-
-    // Set the recipient email address
-    $to = 'matthew.mccormick2021@gmail.com'; // Your email address
-    $email_subject = "Website Contact Form: $name";
-    $email_body = "You have received a new message from your website contact form.\n\n" .
-                  "Here are the details:\n\n" .
-                  "Name: $name\n\n" .
-                  "Email: $email_address\n\n" .
-                  "Phone: $phone\n\n" .
-                  "Message:\n$message";
-    $headers = "From: noreply@gmail.com\n"; // The email address the generated message will be from
-    $headers .= "Reply-To: $email_address";
-
-    // Send the email
-    if (mail($to, $email_subject, $email_body, $headers)) {
-        echo "Message sent successfully!";
-        return true;
-    } else {
-        echo "Mail server is not responding. Please try again later.";
-        return false;
-    }
-} else {
-    echo "Invalid request method!";
-    return false;
+$name = $_POST['name'];
+if ($email_address === FALSE) {
+    echo 'Invalid email';
+    exit(1);
 }
-?>
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
+if (empty($_POST['_gotcha'])) { // If hidden field was filled out (by spambots) don't send!
+    // Create the email and send the message
+    $to = 'yourname@yourdomain.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+    $email_subject = "Website Contact Form:  $name";
+    $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+    $headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+    $headers .= "Reply-To: $email_address";
+    mail($to,$email_subject,$email_body,$headers);
+    return true;
+}
+echo "Gotcha, spambot!";
+return false;
+?>
