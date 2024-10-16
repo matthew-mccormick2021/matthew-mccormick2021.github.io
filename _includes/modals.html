@@ -15,10 +15,15 @@
           <div class="modal-body">
             <h2>{{ post.title }}</h2>
             <hr class="star-primary">
+            <!-- Original Image -->
             <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+            
+            <!-- Description -->
             {% if post.description %}
             <p>{{ post.description }}</p>
             {% endif %}
+            
+            <!-- Project Details -->
             <ul class="list-inline item-details">
               {% if post.client %}
               <li>Client:
@@ -36,8 +41,18 @@
               </li>
               {% endif %}
             </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-              Close</button>
+
+            <!-- Additional Images (if any) -->
+            {% if post.additional_images %}
+            <div class="additional-images">
+              <h4>Additional Images</h4>
+              {% for image in post.additional_images %}
+              <img src="img/portfolio/{{ image }}" class="img-responsive img-centered" alt="Additional image">
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
           </div>
         </div>
       </div>
