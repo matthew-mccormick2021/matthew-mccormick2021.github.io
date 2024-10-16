@@ -14,13 +14,9 @@ google_verify:
 bing_verify:
 
 # Contact form:
-# - static : pass through formspree.io to validate email sending
-# - disqus : replace contact form by disqus thread
-# - comment the line below if you want to stick with the default PHP contact form
-contact: static
+contact: default  # Enable the default PHP contact form
 
 # If you use disqus you need disqus shortname
-# https://help.disqus.com/customer/portal/articles/466208
 disqus_shortname: matthew-mccormick2021
 
 # Color settings (hex-codes without the leading hash-tag)
@@ -57,7 +53,7 @@ credits: 'Github is a free to use web site creator'
 markdown: kramdown
 permalink: pretty
 
-#for posts
+# For posts
 defaults:
   - scope:
       path: ""
