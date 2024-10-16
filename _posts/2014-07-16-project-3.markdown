@@ -6,6 +6,6 @@ img: Astro1.png
 alt: image-alt
 project-date: November 2024
 client: MAE 3304 Astronautics 1
-category: Web Development
+category: Satellite Design
 description: Currently working on!
 ---
