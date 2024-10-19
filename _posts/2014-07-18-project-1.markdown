@@ -9,4 +9,9 @@ client: MAE 1351 Intro to Design
 category: 3D Modeling and Manufactoring
 description: The goal was to stay as true to the original trebuchet design as possible, so my version kept many of the key features such as the sling and trigger tucked under the throwing arm with a sliding base and our standard gravity counterweight. Major outlines of the design included 3.75 to 1 ratio of throwing arm to counter arm, as well as a sling the same length as the throwing arm, I also aimed to maintain simplicity, as simple parts proved easier to modify and provided faster, more cost effecient prints. Materials were selected in order to complimenet the given mass and size paramaters. Another parameter needing to be satisfied was the use of a COTS component. In this case a 1/4 in diameter 6 in long bolt was used as the throwing arm axle. It was comprised of common zinc alloy with a hex nut shape, purchased from a local hardware store. It was held in place on the frame with the corresponding washers and nut. Another COTS component was used as the sling. Through testing with different materials such as yarn, paracord, shoestring, and fishing line, the fishing line provided best results. The fishing line utilized was 8lb braided line, due to its low elasticty and its rigidity to not hold a certain shape. Solidworks motion was utilized to determine how the non-loaded trebuchet would respond to normal gravity. The examination proved the throwing arm was much shorter than needed and in order to reach optimul torque a roughly 15% increase in length was applied on the arm. Other minor fixes included a channel on the base for the payload and a stockier counter arm portion to maximize distance thrown. During the project showcase the trebuchet preformed effectively delivering the payload within the required area, and displayed no issues meachanically.
 additonal_images:
+-Treb_1.png
+-Treb_2.png
+-Treb_3.png
+-Treb_4.png
+-Treb_5.png
 ---
