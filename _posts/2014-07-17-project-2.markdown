@@ -7,7 +7,7 @@ alt: image-alt
 project-date: November 2023
 client: MAE 3303 Compressible Flow
 category: Airfoil Design (MatLab)
-description: 
+description:
 The aim of this project is to optimize the lift to drag ratio, L/D, of a biconvex airfoil in supersonic flow with a free stream Mach number of 3.0. This design 
 must maintain the constraints of having a pitching moment coefficient about the leading edge of 0.1 magnitude, while also achieving a minimal lift coefficient of 
 0.3. The structural criteria of the airfoil must also adhere to the thickness constraints of minimum total thickness of upper and lower surface being at least 10% 
