@@ -23,22 +23,6 @@
         </a>
       </div>
       
-      <!-- Additional Images -->
-      {% if post.additional_images %}
-        {% for image in post.additional_images %}
-        <div class="portfolio-flex-item portfolio-item">
-          <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="img/portfolio/{{ image }}" class="img-responsive" alt="Additional image">
-          </a>
-        </div>
-        {% endfor %}
-      {% endif %}
-      
       {% endfor %}
     </div>
   </div>
