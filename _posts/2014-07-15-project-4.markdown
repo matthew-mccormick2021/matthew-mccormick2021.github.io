@@ -6,6 +6,6 @@ img: Astro2.png
 alt: image-alt
 project-date: November 2024
 client: MAE 3304 Astronautics 1
-category: Satellite Design
+category: Non-Planar Hohmann Transfer
 description: Currently working on!
 ---
