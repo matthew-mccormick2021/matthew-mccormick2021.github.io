@@ -39,16 +39,6 @@
               {% endif %}
             </ul>
 
-            <!-- Additional Images (if any) -->
-            {% if post.additional_images %}
-            <div class="additional-images">
-              <h4>Additional Images</h4>
-              {% for image in post.additional_images %}
-              <img src="img/portfolio/{{ image }}" class="img-responsive img-centered" alt="Additional image">
-              {% endfor %}
-            </div>
-            {% endif %}
-
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
           </div>
         </div>
